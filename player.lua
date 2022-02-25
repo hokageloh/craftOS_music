@@ -1,5 +1,8 @@
 speaker = peripheral.find("speaker")
 if speaker == nil then
+  print("Speaker not found")
+  return
+end
 
 tArgs = { ... }
 if #tArgs < 1 then
