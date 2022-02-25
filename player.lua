@@ -1,7 +1,20 @@
+speaker = peripheral.find("speaker")
+if speaker == nil then
 
-speaker = nil 
+tArgs = { ... }
+if #tArgs < 1 then
+  print("Usage: player <music file>")
+  return
+end
 
--- Supperted instruments
+file = io.open(tArgs[1])
+music = decode(file.read(file))
+
+print('Playing "'..music[1]..'"')
+print('Author: '..music[2])
+
+play(music)
+
 instruments = {
   [1] = "guitar",
   [2] = "chime",
@@ -41,5 +54,3 @@ function play(music)
     playNote(music[3][i][1], music[3][i][2], music[3][i][3])
   end
 end
-
-play(decode(music_text))
