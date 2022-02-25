@@ -31,7 +31,7 @@ function split(inputstr, sep)
 end
 
 function playNote(instrument, time, note)
-  speaker.playNote(instruments[instrument], 1, note)
+  speaker.playNote(instruments[tonumber(instrument)], 1, note)
   sleep(time*20)
 end
 
