@@ -1,4 +1,6 @@
 
+speaker = nil 
+
 -- Supperted instruments
 instruments = {
   [1] = "guitar",
@@ -21,7 +23,7 @@ function split(inputstr, sep)
 end
 
 function playNote(instrument, time, note)
-  print(instrument .. " " .. " " .. note)
+  speaker.playNote(instruments[instrument], 1, note)
   sleep(time*20)
 end
 
