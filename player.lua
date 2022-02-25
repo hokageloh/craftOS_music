@@ -10,14 +10,6 @@ if #tArgs < 1 then
   return
 end
 
-file = io.open(tArgs[1])
-music = decode(file.read(file))
-
-print('Playing "'..music[1]..'"')
-print('Author: '..music[2])
-
-play(music)
-
 instruments = {
   [1] = "guitar",
   [2] = "chime",
@@ -57,3 +49,13 @@ function play(music)
     playNote(music[3][i][1], music[3][i][2], music[3][i][3])
   end
 end
+
+
+file = io.open(tArgs[1])
+music_text = file.read(file)
+music = decode(music_text)
+
+print('Playing "'..music[1]..'"')
+print('Author: '..music[2])
+
+play(music)
