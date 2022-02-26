@@ -32,7 +32,7 @@ end
 
 function playNote(instrument, time, note)
   speaker.playNote(instruments[instrument], 1, note)
-  sleep(time*20)
+  sleep(time/20)
 end
 
 function decode(text)
@@ -58,4 +58,16 @@ music = decode(music_text)
 print('Playing "'..music[1]..'"')
 print('Author: '..music[2])
 
-play(music)
+r = number(music[4])
+if r == -1 then
+  while true do
+    play(music)
+    sleep(1)
+  end
+elseif r > 0
+  for i = 1, r do
+    play(music)
+  end
+else
+  play(music)
+end
