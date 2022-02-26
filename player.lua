@@ -58,7 +58,7 @@ music = decode(music_text)
 print('Playing "'..music[1]..'"')
 print('Author: '..music[2])
 
-r = number(music[4])
+r = tonumber(music[4])
 if r == -1 then
   while true do
     play(music)
