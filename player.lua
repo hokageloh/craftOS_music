@@ -64,7 +64,7 @@ if r == -1 then
     play(music)
     sleep(1)
   end
-elseif r > 0
+elseif r > 0 then
   for i = 1, r do
     play(music)
   end
